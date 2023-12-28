@@ -130,9 +130,8 @@ export class LGThinQHomebridgePlatform implements DynamicPlatformPlugin {
 
       const accessoryType = Helper.make(device);
       if (accessoryType === null) {
-        this.log.info('Device not supported: '+ device.platform + ': ' + device.toString());
-        this.ThinQ.unregister(device).then(() => {
-          this.log.debug(device.id, '- unregistered!');
+        this.log.info('Device not supported,trying anyway: '+ device.platform + ': ' + device.toString());
+
         });
         continue;
       }
